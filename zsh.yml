@@ -1,0 +1,12 @@
+---
+- hosts: localhost
+  tasks:
+    - name: install zsh if not existing
+      command: ./oh-my-zsh-install.sh
+
+    - name: copy .zshrc
+      copy: src=files/.zshrc dest=~/ force=yes
+
+    - name: copy mad.zsh-theme
+      copy: src=files/mad.zsh-theme dest=~/.oh-my-zsh/themes force=yes
+

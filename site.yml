@@ -4,4 +4,5 @@
 - include: pip.yml
 - include: files.yml
 - include: git.yml
+- include: zsh.yml
 
