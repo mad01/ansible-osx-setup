@@ -7,13 +7,6 @@ else
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
-if which ansible >/dev/null; then
-    echo brew exists
-else
-    echo ansible does not exist installing it 
-    pip install ansible
-fi
-
 pkg="python"
 if brew list -1 | grep -q "^${pkg}\$"; then
     echo "Package '$pkg' is installed"
@@ -23,5 +16,17 @@ else
     brew linkapps python
 fi
 
-echo "running ansible playbook"
-ansible-playbook -i hosts site.yml
+if which ansible >/dev/null; then
+    echo ansible exists
+else
+    echo ansible does not exist installing it 
+    pip install ansible
+fi
+
+if which ansible-playbook >/dev/null; then
+    echo "running ansible playbook"
+    ansible-playbook -i hosts site.yml
+else
+    echo ansible-playbook not installed
+fi
+
