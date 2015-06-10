@@ -3,4 +3,5 @@
 - include: cask.yml
 - include: pip.yml
 - include: files.yml
+- include: git.yml
 
