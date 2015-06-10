@@ -1,0 +1,67 @@
+---
+- hosts: localhost
+  tasks:
+    - name: update homebrew 
+      homebrew: update_homebrew=yes
+
+    - name: install homebrew cask
+      homebrew: name=brew-cask state=latest
+
+    - name: install wget
+      homebrew: name=wget state=latest
+
+    - name: install git
+      homebrew: name=git state=latest
+
+    - name: install subversion 
+      homebrew: name=subversion state=latest
+
+    - name: install mosh 
+      homebrew: name=mosh state=latest
+
+    - name: install zsh 
+      homebrew: name=zsh state=latest
+
+    - name: install tree 
+      homebrew: name=tree state=latest
+
+    - name: install node
+      homebrew: name=node state=latest
+
+    - name: install libev 
+      homebrew: name=libev state=latest
+
+    - name: install xz 
+      homebrew: name=xz state=latest
+
+    - name: install ssh-copy-id
+      homebrew: name=ssh-copy-id state=latest
+
+    - name: install htop
+      homebrew: name=htop state=latest
+
+    - name: install fig 
+      homebrew: name=fig state=latest
+
+    - name: install cmake 
+      homebrew: name=cmake state=latest
+
+    - name: install gdbm 
+      homebrew: name=gdbm state=latest
+
+    - name: install libyaml
+      homebrew: name=libyaml state=latest
+
+    - name: install gnu-tar 
+      homebrew: name=gnu-tar state=latest
+
+    - name: install pkg-config
+      homebrew: name=pkg-config state=latest
+
+    - name: install nmap
+      homebrew: name=nmap state=latest
+
+    - name: install protobuf 
+      homebrew: name=protobuf state=latest
+
+

@@ -1,0 +1,37 @@
+---
+- hosts: localhost
+  tasks:
+    - name: install alfred 
+      homebrew_cask: name=alfred state=present
+
+    - name: install google-chrome
+      homebrew_cask: name=google-chrome state=present
+
+    - name: install firefox
+      homebrew_cask: name=firefox state=present
+
+    - name: install spotify
+      homebrew_cask: name=spotify state=present
+
+    - name: install skype 
+      homebrew_cask: name=skype state=present
+
+    - name: install google-drive
+      homebrew_cask: name=google-drive state=present
+
+    - name: install sublime-text
+      homebrew_cask: name=sublime-text state=present
+
+    - name: install flux
+      homebrew_cask: name=flux state=present
+
+    - name: install iterm2
+      homebrew_cask: name=iterm2 state=present
+
+    - name: install evernote
+      homebrew_cask: name=evernote state=present
+
+    - name: install dropbox 
+      homebrew_cask: name=dropbox state=present
+
+

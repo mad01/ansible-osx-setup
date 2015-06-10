@@ -1,0 +1,68 @@
+---
+- hosts: localhost
+  tasks:
+    - name: install ipython
+      pip: name=ipython state=present
+
+    - name: install Flask
+      pip: name=Flask state=present
+
+    - name: install lxml 
+      pip: name=lxml state=present
+
+    - name: install pep8 
+      pip: name=pep8 state=present
+
+    - name: install requests 
+      pip: name=requests state=present
+
+    - name: install setuptools 
+      pip: name=setuptools state=present
+
+    - name: install six 
+      pip: name=six state=present
+
+    - name: install virtualenv
+      pip: name=virtualenv state=present
+
+    - name: install aniso8601
+      pip: name=aniso8601 state=present
+
+    - name: install docker-py
+      pip: name=docker-py state=present
+
+    - name: install dockerpty
+      pip: name=dockerpty state=present
+
+    - name: install flake8
+      pip: name=flake8 state=present
+
+    - name: install Flask-RESTful 
+      pip: name=Flask-RESTful state=present
+
+    - name: install nose
+      pip: name=nose state=present
+
+    - name: install mock 
+      pip: name=mock state=present
+
+    - name: install passlib 
+      pip: name=passlib state=present
+
+    - name: install pyflakes 
+      pip: name=pyflake state=present
+
+    - name: install pymongo 
+      pip: name=pymongo state=present
+
+    - name: install pytz
+      pip: name=pytz state=present
+
+    - name: install PyYAML 
+      pip: name=PyYAML state=present
+
+    - name: install simplejson 
+      pip: name=simplejson state=present
+
+    - name: install BeautifulSoup 
+      pip: name=BeautifulSoup state=present
