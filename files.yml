@@ -1,0 +1,17 @@
+---
+- hosts: localhost
+  vars:
+    local_home: "{{ lookup('env','HOME') }}"
+  tasks:
+    - name: create .config in home of the user if exsting
+      file: path={{ local_home }}/.config state=directory mode=0755
+
+    - name: copy .bash_alias to home of user
+      copy: src=files/.bash_alias dest=~/ force=yes
+
+    - name: copy flake8 config to home of user
+      copy: src=files/flake8 dest=~/.config force=yes
+
+    - name: copy pep8 config to home of user
+      copy: src=files/pep8 dest=~/.config force=yes
+ 

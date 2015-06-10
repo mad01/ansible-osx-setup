@@ -1,0 +1,18 @@
+alias l='ls'
+alias lth='ls -lth'
+alias la='ls -a'
+alias lla='ls -la'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias la='ls -AF'
+alias ll='ls -lFh'
+alias grep='grep --color=auto'
+alias df='df -h'
+
+# fix "__git_ps1" issue
+source ~/.git-prompt.sh
+alias vim='mvim -v'
+alias random='echo $RANDOM | md5'
+export PATH=$PATH:/usr/local/opt/go/libexec/bin
+source .priv_alias
