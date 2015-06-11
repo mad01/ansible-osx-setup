@@ -1,0 +1,20 @@
+---
+- hosts: localhost
+  vars:
+    local_home: "{{ lookup('env','HOME') }}"
+  tasks:
+    - name: create $HOME/.vim_swap if exists
+      file: path={{ local_home }}/.vim_swap state=directory mode=0755
+
+    - name: set locale for vim install
+      command: ./utf8.sh
+
+    - name: install vim setup from git
+      shell: curl -o - https://raw.githubusercontent.com/mad01/vimrc/master/auto-install.sh | sh
+
+    - name: compile and install YCM .vim/bundle/YouCompleteMe
+      shell: cd ~/.vim/bundle/YouCompleteMe; git submodule update --init --recursive ; ./install.sh --clang-completer ; ./install.sh 
+
+    - name: copy .vimrc
+      copy: src=files/.vimrc dest=~/ force=yes
+
