@@ -17,4 +17,3 @@
 
     - name: copy .vimrc
       copy: src=files/.vimrc dest=~/ force=yes
-

@@ -8,6 +8,3 @@
 
     - name: copy  .git-prompt.sh in to user
       copy: src=files/.git-prompt.sh dest=~/ force=yes
-
-
-

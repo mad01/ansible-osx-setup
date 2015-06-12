@@ -63,5 +63,3 @@
 
     - name: install protobuf 
       homebrew: name=protobuf state=latest
-
-
