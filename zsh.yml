@@ -2,7 +2,7 @@
 - hosts: localhost
   tasks:
     - name: install zsh if not existing
-      command: ./oh-my-zsh-install.sh
+      command: ./files/oh-my-zsh-install.sh
 
     - name: copy .zshrc
       copy: src=files/.zshrc dest=~/ force=yes
