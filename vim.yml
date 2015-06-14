@@ -13,7 +13,7 @@
       shell: curl -o - https://raw.githubusercontent.com/mad01/vimrc/master/auto-install.sh | sh
 
     - name: compile and install YCM .vim/bundle/YouCompleteMe
-      shell: cd ~/.vim/bundle/YouCompleteMe; git submodule update --init --recursive ; ./install.sh --clang-completer ; ./install.sh 
+      shell: cd ~/.vim/bundle/YouCompleteMe; git submodule update --init --recursive ; ./install.sh --clang-completer
 
     - name: copy .vimrc
       copy: src=files/.vimrc dest=~/ force=yes
