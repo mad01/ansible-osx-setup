@@ -57,7 +57,7 @@ unsetopt correct_all
 export PATH="/usr/local/bin:/usr/local/pgsql/bin:/usr/local/php5/bin:/usr/local/sbin:/usr/local/mysql/bin:$PATH"
 export LC_ALL=en_US.UTF-8  
 export LANG=en_US.UTF-8
-export PATH="/usr/local/Cellar/:${PATH}"
+export PATH="/usr/local/Cellar:${PATH}"
 setopt INC_APPEND_HISTORY
 setopt NO_SHARE_HISTORY
 export PATH=$PATH:/usr/local/mysql/bin
