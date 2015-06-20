@@ -25,7 +25,7 @@ fi
 
 if which ansible-playbook >/dev/null; then
     echo "running ansible playbook"
-    ansible-playbook -i hosts site.yml
+    ansible-playbook -i hosts site.yml --ask-sudo-pass
 else
     echo ansible-playbook not installed
 fi
