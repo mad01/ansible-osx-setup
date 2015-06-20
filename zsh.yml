@@ -11,4 +11,5 @@
       copy: src=files/mad.zsh-theme dest=~/.oh-my-zsh/themes force=yes
 
     - name: set zsh as default shell
-      shell: chsh -s $(which zsh)
+      sudo: yes
+      shell: chsh -s "$(command -v zsh)" "${USER}"
