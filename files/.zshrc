@@ -61,3 +61,6 @@ export PATH="/usr/local/Cellar:${PATH}"
 setopt INC_APPEND_HISTORY
 setopt NO_SHARE_HISTORY
 export PATH=$PATH:/usr/local/mysql/bin
+
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
