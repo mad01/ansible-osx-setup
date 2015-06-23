@@ -64,6 +64,18 @@
     - name: install protobuf 
       homebrew: name=protobuf state=latest
 
+    - name: install nvm
+      homebrew: name=nvm state=latest
+
+    - name: install jpeg
+      homebrew: name=jpeg state=latest
+
+    - name: install imagemagick
+      homebrew: name=imagemagick state=latest
+
+    - name: install pngquant 
+      homebrew: name=pngquant state=latest
+
     - name: brew tap versions
       shell: brew tap homebrew/versions 
 
