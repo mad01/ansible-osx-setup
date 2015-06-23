@@ -1,0 +1,11 @@
+---
+- hosts: localhost
+  tasks:
+    - name: install chai
+      npm: name=chai global=yes
+
+    - name: install jstestdriver
+      npm: name=jstestdriver global=yes
+
+    - name: install mocha
+      npm: name=mocha global=yes

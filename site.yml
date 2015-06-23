@@ -6,3 +6,4 @@
 - include: git.yml
 - include: zsh.yml
 - include: gem.yml
+- include: npm.yml
