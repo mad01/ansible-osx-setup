@@ -5,3 +5,4 @@
 - include: files.yml
 - include: git.yml
 - include: zsh.yml
+- include: gem.yml
