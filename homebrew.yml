@@ -5,7 +5,7 @@
       homebrew: update_homebrew=yes
 
     - name: install homebrew cask
-      homebrew: name=brew-cask state=latest
+      shell: brew install caskroom/cask/brew-cask
 
     - name: install wget
       homebrew: name=wget state=latest
