@@ -63,3 +63,9 @@
 
     - name: install protobuf 
       homebrew: name=protobuf state=latest
+
+    - name: brew tap versions
+      shell: brew tap homebrew/versions 
+
+    - name: install older version of phantomjs
+      shell: brew install homebrew/versions/phantomjs198
