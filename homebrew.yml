@@ -81,3 +81,6 @@
 
     - name: install older version of phantomjs
       shell: brew install homebrew/versions/phantomjs198
+
+    - name: install groovy
+      homebrew: name=groovy state=latest

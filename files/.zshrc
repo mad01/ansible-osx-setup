@@ -64,3 +64,4 @@ export PATH=$PATH:/usr/local/mysql/bin
 
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
+export GROOVY_HOME=/usr/local/opt/groovy/libexec
