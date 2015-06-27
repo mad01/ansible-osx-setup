@@ -2,7 +2,6 @@
 	name = Alexander Brandstedt
 	email = alexanderbrandstedt@gmail.com
 [core]
-	excludesfile = /Users/mad/.gitignore
 	editor = mvim -v
 [push]
     default = simple

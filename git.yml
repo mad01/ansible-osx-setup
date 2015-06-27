@@ -8,3 +8,6 @@
 
     - name: copy  .git-prompt.sh in to user
       copy: src=files/.git-prompt.sh dest=~/ force=yes
+
+    - name: set .gitignore
+      shell: git config --global core.excludesfile ~/.gitignore
