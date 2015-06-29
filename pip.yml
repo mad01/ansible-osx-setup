@@ -66,3 +66,6 @@
 
     - name: install BeautifulSoup 
       pip: name=BeautifulSoup state=present
+
+    - name: install pytest
+      pip: name=pytest state=latest
