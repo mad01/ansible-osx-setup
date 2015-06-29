@@ -69,3 +69,6 @@
 
     - name: install pytest
       pip: name=pytest state=latest
+
+    - name: install selenium
+      pip: name=selenium state=latest
