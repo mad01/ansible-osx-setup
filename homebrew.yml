@@ -4,8 +4,11 @@
     - name: update homebrew 
       homebrew: update_homebrew=yes
 
+    - name: tap homebrew cask
+      homebrew_tap: tap=caskroom/cask state=present
+
     - name: install homebrew cask
-      shell: brew install caskroom/cask/brew-cask
+      homebrew: name=brew-cask
 
     - name: install wget
       homebrew: name=wget state=latest
@@ -84,3 +87,6 @@
 
     - name: install groovy
       homebrew: name=groovy state=latest
+
+    - name: install mercurial
+      homebrew: name=mercurial state=latest

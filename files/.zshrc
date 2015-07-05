@@ -67,3 +67,6 @@ source $(brew --prefix nvm)/nvm.sh
 export GROOVY_HOME=/usr/local/opt/groovy/libexec
 
 export ANSIBLE_NOCOWS=1
+
+export GOPATH=$HOME 
+export PATH=$PATH:$GOPATH/bin
