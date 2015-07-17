@@ -72,3 +72,6 @@
 
     - name: install selenium
       pip: name=selenium state=latest
+
+    - name: install pyrax rackspace python api 
+      pip: name=pyrax state=latest
