@@ -33,3 +33,6 @@
 
     - name: install dropbox 
       homebrew_cask: name=dropbox state=present
+
+    - name: install vagrant
+      homebrew_cask: name=vagrant state=present
