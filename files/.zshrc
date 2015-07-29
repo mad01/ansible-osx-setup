@@ -70,3 +70,4 @@ export ANSIBLE_NOCOWS=1
 
 export GOPATH=$HOME 
 export PATH=$PATH:$GOPATH/bin
+zstyle ':completion:*:(all-|)files' ignored-patterns "(*.pyc|*~)"
