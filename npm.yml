@@ -9,3 +9,6 @@
 
     - name: install mocha
       npm: name=mocha global=yes
+
+    - name: install eslint 
+      npm: name=eslint global=yes
