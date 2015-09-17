@@ -10,3 +10,6 @@
     ls = ls-tree -r master --name-only
     ci = commit
     s = status
+    d = diff
+    a = add
+
