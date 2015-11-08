@@ -15,6 +15,9 @@ Plug 'fatih/vim-go'
 Plug 'tpope/vim-surround'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'jiangmiao/auto-pairs'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
 
 " Javascript
@@ -211,3 +214,12 @@ autocmd StdinReadPre * let s:std_in=1
 set completeopt-=preview
 let g:go_disable_autoinstall = 0
 let g:neocomplete#enable_at_startup = 1
+
+
+" Snippets are separated from the engine. Add this if you want them:
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
