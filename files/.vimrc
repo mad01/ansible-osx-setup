@@ -219,8 +219,7 @@ let g:neocomplete#enable_at_startup = 1
 
 " Snippets are separated from the engine. Add this if you want them:
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:UltiSnipsExpandTrigger="<c-j>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
