@@ -90,3 +90,6 @@
 
     - name: install mercurial
       homebrew: name=mercurial state=latest
+
+    - name: install trash
+      homebrew: name=trash state=latest

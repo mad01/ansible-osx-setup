@@ -16,3 +16,4 @@ alias vim='mvim -v'
 alias random='echo $RANDOM | md5'
 source ~/.priv_alias
 alias c='cd ~/work/git'
+alias rm='trash'
