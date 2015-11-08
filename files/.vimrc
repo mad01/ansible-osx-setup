@@ -1,15 +1,30 @@
 set rtp+=~/.vim/bundle/Vundle.vim
 filetype off                  
-call vundle#begin()
 
-" Plugins 
-Plugin 'YouCompleteMe'
-Plugin 'syntastic'
-Plugin 'wombat256.vim'
-Plugin 'NERDTree'
-Plugin 'fatih/vim-go'
+"
+" Setup
+call plug#begin('~/.vim/plugged')
 
-call vundle#end()            
+" Plugs to install
+" General
+Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/syntastic'
+Plug 'vim-scripts/wombat256.vim'
+Plug 'fatih/vim-go'
+Plug 'tpope/vim-surround'
+Plug 'editorconfig/editorconfig-vim'
+
+
+" Javascript
+Plug 'moll/vim-node', {'for': 'javascript'}
+Plug 'ahayman/vim-nodejs-complete', {'for': 'javascript'}
+Plug 'ternjs/tern_for_vim', {'for': 'javascript', 'do': 'npm install'}
+
+call plug#end()
+
+
+
 filetype plugin indent on  
 
 " General
