@@ -14,6 +14,7 @@ Plug 'vim-scripts/wombat256.vim'
 Plug 'fatih/vim-go'
 Plug 'tpope/vim-surround'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'jiangmiao/auto-pairs'
 
 
 " Javascript
