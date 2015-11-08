@@ -91,5 +91,8 @@
     - name: install mercurial
       homebrew: name=mercurial state=latest
 
+    - name: tap rcmdnk/rcmdnkpac
+      homebrew_tap: tap=rcmdnk/rcmdnkpac state=present
+
     - name: install trash
-      homebrew: name=trash state=latest
+      homebrew: name=rcmdnk-trash state=latest
