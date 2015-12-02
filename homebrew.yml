@@ -96,3 +96,6 @@
 
     - name: install trash
       homebrew: name=rcmdnk-trash state=latest
+
+    - name: install fzf
+      homebrew: name=fzf state=latest
