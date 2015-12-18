@@ -99,3 +99,6 @@
 
     - name: install fzf
       homebrew: name=fzf state=latest
+
+    - name: install pyenv
+      homebrew: name=pyenv state=latest
