@@ -71,4 +71,7 @@ export ANSIBLE_NOCOWS=1
 export GOPATH=$HOME 
 export PATH=$PATH:$GOPATH/bin
 zstyle ':completion:*:(all-|)files' ignored-patterns "(*.pyc|*~)"
-export PYENV_ROOT=/usr/local/var/pyenv
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
