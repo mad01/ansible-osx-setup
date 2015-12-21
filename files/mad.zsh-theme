@@ -26,8 +26,19 @@ local host="@${host_repr[$(hostname)]:-$(hostname)}%{$reset_color%}"
 # Compacted $PWD
 local pwd="%{$fg[blue]%}%c%{$reset_color%}"
 
-# PROMPT='${user}${host} ${pwd} $(git_prompt_info)'
-PROMPT='${user}${host} ${pwd} $(git_prompt_info)'
+pyenv_status() {
+    if [ -f .python-version ]; then
+        py_version=$(<.python-version)
+        py_env=${"$(pyenv version-name)"}
+        if (test "${py_env#*$py_version}" != "$py_env"); then
+            echo "%{$fg[239]%}py %{$reset_color%}%{$fg[green]%}$py_env %{$reset_color%}"
+        else
+            echo "py %{$reset_color%}%{$fg[red]%}$py_env %{$reset_color%}"
+        fi
+    fi
+}
+
+PROMPT='${user}${host} ${pwd} $(pyenv_status)$(git_prompt_info)'
 
 # i would prefer 1 icon that shows the "most drastic" deviation from HEAD,
 # but lets see how this works out
