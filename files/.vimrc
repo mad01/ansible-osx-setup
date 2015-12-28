@@ -1,4 +1,3 @@
-set rtp+=~/.vim/bundle/Vundle.vim
 filetype off                  
 
 "
@@ -249,3 +248,5 @@ let g:syntastic_go_checkers = ['go', 'golint', 'errcheck']
 au Filetype go nnoremap <leader>v :vsp <CR>:exe "GoDef" <CR>
 au Filetype go nnoremap <leader>s :sp <CR>:exe "GoDef"<CR>
 au Filetype go nnoremap <leader>t :tab split <CR>:exe "GoDef"<CR>
+
+let g:ycm_path_to_python_interpreter = '/usr/local/bin/python'
