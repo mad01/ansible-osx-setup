@@ -100,5 +100,9 @@
     - name: install fzf
       homebrew: name=fzf state=latest
 
-    - name: install pyenv
-      homebrew: name=pyenv state=latest
+    - name: tap neovim
+      homebrew_tap: tap=neovim/homebrew-neovim state=present
+
+    - name: install neovim
+      homebrew: name=neovim state=latest
+
