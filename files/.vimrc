@@ -1,12 +1,13 @@
-filetype off                  
+set nocompatible " be iMproved, required
 
-"
+filetype off
+
 " Setup
 call plug#begin('~/.vim/plugged')
 
+
 " Plugs to install
 " General
-Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
 Plug 'vim-scripts/wombat256.vim'
@@ -18,6 +19,9 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'junegunn/vim-easy-align'
+Plug 'bling/vim-airline'
+Plug 'benekastah/neomake'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 
@@ -26,15 +30,23 @@ Plug 'moll/vim-node', {'for': 'javascript'}
 Plug 'ahayman/vim-nodejs-complete', {'for': 'javascript'}
 Plug 'ternjs/tern_for_vim', {'for': 'javascript', 'do': 'npm install'}
 
-call plug#end()
 
+call plug#end()
 
 
 filetype plugin indent on  
 
 " General
-set nocompatible             " not compatible with the old-fashion vi mode
 set history=100              " store 100 lines of history
+
+"NeoVim handles ESC keys as alt+key, set this to solve the problem
+  set timeout
+  set timeoutlen=750
+  set ttimeoutlen=250
+  if has('nvim')
+     set ttimeout
+     set ttimeoutlen=0
+  endif
 
 
 " User Interface
@@ -67,29 +79,10 @@ filetype indent on           " enable filetype-specific indenting
 filetype plugin on           " enable filetype-specific plugins
 
 
-" auto reload vimrc when editing it
-autocmd! BufWritePost .vimrc source ~/.vimrc
-
-
 " disable annoying sound on errors
 set noerrorbells
 set novisualbell
-set t_vb=
 set tm=500
-
-
-" vimtip#80 restore cursor to file position in previous editing session
-set viminfo='10,\"100,:20,%,n~/.viminfo
-function! ResCur()
-  if line("'\"") <= line("$")
-    normal! g`"
-    return 1
-  endif
-endfunction
-augroup resCur
-  autocmd!
-  autocmd BufWinEnter * call ResCur()
-augroup END
 
 
 " Formatting
@@ -108,7 +101,6 @@ autocmd FileType jade set tabstop=2|set softtabstop=2|set shiftwidth=2
 syntax on
 set hlsearch
 set background=dark          " set background dark
-set t_Co=256                 " 256 color mode
 colorscheme wombat256mod
 
 
@@ -118,50 +110,27 @@ set pastetoggle=<F2>         " toggle paste mode
 set ffs=unix,dos,mac         " use unix as standard file format
 
 
-" Statusline
-set laststatus=2
-set statusline=\ %{HasPaste()}%<%-15.25(%f%)%m%r%h\ %w\ \ 
-set statusline+=\ \ \ [%{&ff}/%Y] 
-set statusline+=\ \ \ %<%20.30(%{hostname()}:%{CurDir()}%)\ 
-set statusline+=%=%-10.(%l,%c%V%)\ %p%%/%L
-
-
-function! CurDir()
-    let curdir = substitute(getcwd(), $HOME, "~", "")
-    return curdir
+" vimtip#80 restore cursor to file position in previous editing session
+set viminfo='10,\"100,:20,%,n~/.viminfo
+function! ResCur()
+  if line("'\"") <= line("$")
+    normal! g`"
+    return 1
+  endif
 endfunction
-
-function! HasPaste()
-    if &paste
-        return '[PASTE]'
-    else
-        return ''
-    endif
-endfunction
+augroup resCur
+  autocmd!
+  autocmd BufWinEnter * call ResCur()
+augroup END
 
 
-" Encoding
-set encoding=utf-8                                  
-set termencoding=utf-8
-set fileencoding=utf-8
-set fileencodings=ucs-bom,utf-8,big5,gb2312,latin1
+" vim-airline
+"let g:airline_powerline_fonts = 1
 
-fun! ViewUTF8()
-	set encoding=utf-8                                  
-	set termencoding=big5
-endfun
 
-fun! UTF8()
-	set encoding=utf-8                                  
-	set termencoding=big5
-	set fileencoding=utf-8
-	set fileencodings=ucs-bom,big5,utf-8,latin1
-endfun
-
-fun! Big5()
-	set encoding=big5
-	set fileencoding=big5
-endfun
+" Neomake
+autocmd! BufWritePost * Neomake
+let g:neomake_python_enabled_makers = ['flake8']
 
 
 " Shortcuts
@@ -184,7 +153,7 @@ map <C-J> <C-W>j<C-W>_       " move to and maximize the below split
 map <C-K> <C-W>k<C-W>_       " move to and maximize the above split
 nmap <c-h> <c-w>h<c-w><bar>  " move to and maximize the left split
 nmap <c-l> <c-w>l<c-w><bar>  " move to and maximize the right split
-set wmw=0                    " set the min width of a window to 0 so we can maximize others 
+set wmw=0                    " set the min width of a window to 0 so we can maximize others
 set wmh=0                    " set the min height of a window to 0 so we can maximize others
 
 map <S-H> gT                 " go to prev tab
@@ -201,16 +170,16 @@ cnoremap <C-K> <C-U>
 " ,p toggles paste mode
 nmap <leader>p :set paste!<BAR>set paste?<CR>
 
-
 " enable function folding
 set foldmethod=syntax
 set foldlevelstart=10
 set directory=~/.vim_swap
 
+
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
-
 autocmd StdinReadPre * let s:std_in=1
+
 
 set completeopt-=preview
 let g:go_disable_autoinstall = 0
@@ -229,11 +198,14 @@ let g:UltiSnipsEditSplit="vertical"
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
 
+
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 
+
 " use goimports for formatting
 let g:go_fmt_command = "goimports"
+
 
 " turn highlighting on
 let g:go_highlight_functions = 1
@@ -241,12 +213,13 @@ let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
-
 let g:syntastic_go_checkers = ['go', 'golint', 'errcheck']
+
 
 " Open go doc in vertical window, horizontal, or tab
 au Filetype go nnoremap <leader>v :vsp <CR>:exe "GoDef" <CR>
 au Filetype go nnoremap <leader>s :sp <CR>:exe "GoDef"<CR>
 au Filetype go nnoremap <leader>t :tab split <CR>:exe "GoDef"<CR>
 
+" ymc
 let g:ycm_path_to_python_interpreter = '/usr/local/bin/python'
