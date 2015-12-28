@@ -12,7 +12,7 @@ alias df='df -h'
 
 # fix "__git_ps1" issue
 source ~/.git-prompt.sh
-alias vim='mvim -v'
+alias vim='nvim'
 alias random='echo $RANDOM | md5'
 source ~/.priv_alias
 alias c='cd ~/work/git'
