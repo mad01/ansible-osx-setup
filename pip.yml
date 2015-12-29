@@ -75,3 +75,6 @@
 
     - name: install pyrax rackspace python api 
       pip: name=pyrax state=latest
+
+    - name: install neovim extra
+      pip: name=neovim state=latest
