@@ -2,7 +2,7 @@
 	name = Alexander Brandstedt
 	email = alexanderbrandstedt@gmail.com
 [core]
-	editor = mvim -v
+	editor = nvim
 [push]
     default = simple
 [alias]
