@@ -63,7 +63,7 @@ set ignorecase               " ignore case when searching
 set smartcase                " ignore case if search pattern is all lowercase, case-sensitive otherwise
 set wildchar=<TAB>           " start wild expansion in the command line using <TAB>
 set wildmenu                 " wild char completion menu
-
+set relativenumber           " set relative numbers
 
 " ignore these files while expanding wild chars
 set wildignore=*.o,*.class,*.pyc
