@@ -21,6 +21,7 @@ Plug 'honza/vim-snippets'
 Plug 'junegunn/vim-easy-align'
 Plug 'bling/vim-airline'
 Plug 'benekastah/neomake'
+Plug 'terryma/vim-multiple-cursors'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
