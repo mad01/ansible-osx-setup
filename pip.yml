@@ -78,3 +78,6 @@
 
     - name: install neovim extra
       pip: name=neovim state=latest
+
+    - name: install watchdog for watchmedo
+      pip: name=watchdog state=latest
