@@ -14,3 +14,6 @@
 
     - name: copy pep8 config to home of user
       copy: src=files/pep8 dest=~/.config force=yes
+
+    - name: copy .tmux.conf
+      copy: src=files/.tmux.conf dest=~/ force=yes
