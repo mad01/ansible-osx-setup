@@ -106,3 +106,5 @@
     - name: install neovim
       homebrew: name=neovim state=latest
 
+    - name: install tmux
+      homebrew: name=tmux state=latest
