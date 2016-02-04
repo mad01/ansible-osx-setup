@@ -108,3 +108,6 @@
 
     - name: install tmux
       homebrew: name=tmux state=latest
+
+    - name: install the_silver_searcher
+      homebrew: name=the_silver_searcher state=latest
