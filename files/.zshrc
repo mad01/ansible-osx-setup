@@ -72,6 +72,5 @@ export GOPATH=$HOME
 export PATH=$PATH:$GOPATH/bin
 zstyle ':completion:*:(all-|)files' ignored-patterns "(*.pyc|*~)"
 
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+export FZF_DEFAULT_COMMAND='ag -g ""'
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
