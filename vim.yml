@@ -7,10 +7,10 @@
       file: path={{ local_home }}/.vim_swap state=directory mode=0755
 
     - name: set locale for vim install
-      command: ./files/utf8.sh
+      command: ./dotfiles/utf8.sh
 
     - name: install vim setup from git
       shell: curl -o - https://raw.githubusercontent.com/mad01/vimrc/master/auto-install.sh | sh
 
     - name: copy .vimrc
-      copy: src=files/.vimrc dest=~/ force=yes
+      copy: src=dotfiles/.vimrc dest=~/ force=yes

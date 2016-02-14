@@ -1,13 +1,13 @@
 - hosts: localhost
   tasks:
     - name: copy .gitconfig in to user
-      copy: src=files/.gitconfig dest=~/ force=yes
+      copy: src=dotfiles/.gitconfig dest=~/ force=yes
 
     - name: copy .gitignore in to user
-      copy: src=files/.gitignore dest=~/ force=yes
+      copy: src=dotfiles/.gitignore dest=~/ force=yes
 
     - name: copy  .git-prompt.sh in to user
-      copy: src=files/.git-prompt.sh dest=~/ force=yes
+      copy: src=dotfiles/.git-prompt.sh dest=~/ force=yes
 
     - name: set .gitignore
       shell: git config --global core.excludesfile ~/.gitignore

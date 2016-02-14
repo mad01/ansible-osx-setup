@@ -28,9 +28,6 @@
     - name: install tree 
       homebrew: name=tree state=latest
 
-    - name: install node
-      homebrew: name=node state=latest
-
     - name: install libev 
       homebrew: name=libev state=latest
 
@@ -67,23 +64,8 @@
     - name: install protobuf 
       homebrew: name=protobuf state=latest
 
-    - name: install nvm
-      homebrew: name=nvm state=latest
-
-    - name: install jpeg
-      homebrew: name=jpeg state=latest
-
-    - name: install imagemagick
-      homebrew: name=imagemagick state=latest
-
-    - name: install pngquant 
-      homebrew: name=pngquant state=latest
-
     - name: brew tap versions
       shell: brew tap homebrew/versions 
-
-    - name: install older version of phantomjs
-      shell: brew install homebrew/versions/phantomjs198
 
     - name: install groovy
       homebrew: name=groovy state=latest

@@ -7,13 +7,13 @@
       file: path={{ local_home }}/.config state=directory mode=0755
 
     - name: copy .bash_alias to home of user
-      copy: src=files/.bash_alias dest=~/ force=yes
+      copy: src=dotfiles/.bash_alias dest=~/ force=yes
 
     - name: copy flake8 config to home of user
-      copy: src=files/flake8 dest=~/.config force=yes
+      copy: src=dotfiles/flake8 dest=~/.config force=yes
 
     - name: copy pep8 config to home of user
-      copy: src=files/pep8 dest=~/.config force=yes
+      copy: src=dotfiles/pep8 dest=~/.config force=yes
 
     - name: copy .tmux.conf
-      copy: src=files/.tmux.conf dest=~/ force=yes
+      copy: src=dotfiles/.tmux.conf dest=~/ force=yes

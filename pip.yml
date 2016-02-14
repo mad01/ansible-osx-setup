@@ -4,12 +4,6 @@
     - name: install ipython
       pip: name=ipython state=present
 
-    - name: install Flask
-      pip: name=Flask state=present
-
-    - name: install lxml 
-      pip: name=lxml state=present
-
     - name: install pep8 
       pip: name=pep8 state=present
 
@@ -37,9 +31,6 @@
     - name: install flake8
       pip: name=flake8 state=present
 
-    - name: install Flask-RESTful 
-      pip: name=Flask-RESTful state=present
-
     - name: install nose
       pip: name=nose state=present
 
@@ -49,32 +40,11 @@
     - name: install passlib 
       pip: name=passlib state=present
 
-    - name: install pyflakes 
-      pip: name=pyflake state=present
-
-    - name: install pymongo 
-      pip: name=pymongo state=present
-
-    - name: install pytz
-      pip: name=pytz state=present
-
-    - name: install PyYAML 
-      pip: name=PyYAML state=present
-
     - name: install simplejson 
       pip: name=simplejson state=present
 
-    - name: install BeautifulSoup 
-      pip: name=BeautifulSoup state=present
-
     - name: install pytest
       pip: name=pytest state=latest
-
-    - name: install selenium
-      pip: name=selenium state=latest
-
-    - name: install pyrax rackspace python api 
-      pip: name=pyrax state=latest
 
     - name: install neovim extra
       pip: name=neovim state=latest
