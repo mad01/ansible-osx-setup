@@ -2,7 +2,7 @@
 - hosts: localhost
   tasks:
     - name: update homebrew 
-      homebrew: update_homebrew=yes
+      homebrew: update_homebrew=yes upgrade_all=yes
 
     - name: tap homebrew cask
       homebrew_tap: tap=caskroom/cask state=present
