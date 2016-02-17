@@ -234,5 +234,5 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " neovim terminal esc 
-let mapleader="\<Space>"
+let mapleader="§"
 :tnoremap <leader><Esc> <C-\><C-n>
