@@ -10,7 +10,6 @@ call plug#begin('~/.vim/plugged')
 " General
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
-Plug 'vim-scripts/wombat256.vim'
 Plug 'fatih/vim-go'
 Plug 'tpope/vim-surround'
 Plug 'editorconfig/editorconfig-vim'
@@ -26,16 +25,31 @@ Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 
+" Themes
+Plug 'vim-scripts/wombat256.vim'
+
+
 " Javascript
 Plug 'moll/vim-node', {'for': 'javascript'}
 Plug 'ahayman/vim-nodejs-complete', {'for': 'javascript'}
 Plug 'ternjs/tern_for_vim', {'for': 'javascript', 'do': 'npm install'}
 
 
+" Elixir
+Plug 'elixir-lang/vim-elixir'
+Plug 'mattreduce/vim-mix'
+Plug 'awetzel/elixir.vim'
+
+
 call plug#end()
 
 
 filetype plugin indent on  
+
+
+" neovim terminal esc 
+:tnoremap <leader><Esc> <C-\><C-n>
+
 
 " General
 set history=100              " store 100 lines of history
@@ -65,6 +79,7 @@ set smartcase                " ignore case if search pattern is all lowercase, c
 set wildchar=<TAB>           " start wild expansion in the command line using <TAB>
 set wildmenu                 " wild char completion menu
 set relativenumber           " set relative numbers
+
 
 " ignore these files while expanding wild chars
 set wildignore=*.o,*.class,*.pyc
@@ -135,6 +150,11 @@ autocmd! BufWritePost * Neomake
 let g:neomake_python_enabled_makers = ['flake8']
 
 
+" FZF
+set rtp+=~/.fzf
+nnoremap <leader>t :call fzf#run({'sink': 'e', 'window': 'enew'})<CR>
+
+
 " Shortcuts
 " disable arrow keys and force hjkl
 noremap  <Up> ""
@@ -145,10 +165,6 @@ noremap  <Left> ""
 noremap! <Left> <Esc>
 noremap  <Right> ""
 noremap! <Right> <Esc>
-
-" set leader to ,
-let mapleader=","
-let g:mapleader=","
 
 " move around splits
 map <C-J> <C-W>j<C-W>_       " move to and maximize the below split
@@ -233,6 +249,4 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-" neovim terminal esc 
-let mapleader="§"
-:tnoremap <leader><Esc> <C-\><C-n>
+
