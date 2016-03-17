@@ -21,8 +21,10 @@ Plug 'junegunn/vim-easy-align'
 Plug 'bling/vim-airline'
 Plug 'benekastah/neomake'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+
+" Formating
+" Plug 'scrooloose/nerdcommenter'
 
 
 " Themes
@@ -38,16 +40,21 @@ Plug 'ternjs/tern_for_vim', {'for': 'javascript', 'do': 'npm install'}
 " Elixir
 Plug 'elixir-lang/vim-elixir'
 Plug 'mattreduce/vim-mix'
-Plug 'awetzel/elixir.vim'
+Plug 'thinca/vim-ref'
+Plug 'awetzel/elixir.nvim', { 'do': 'yes \| ./install.sh' }
+
+" completion
+" Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'Shougo/deoplete.nvim'
 
 
 call plug#end()
 
 
-filetype plugin indent on  
+filetype plugin indent on
 
 
-" neovim terminal esc 
+" neovim terminal esc
 :tnoremap <leader><Esc> <C-\><C-n>
 
 
@@ -142,7 +149,7 @@ augroup END
 
 
 " vim-airline
-"let g:airline_powerline_fonts = 1
+" let g:airline_powerline_fonts = 1
 
 
 " Neomake
@@ -250,3 +257,9 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 
+" deoplete.nvim
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_ignore_case = 1
+inoremap <silent><expr> <Tab>
+\ pumvisible() ? "\<C-n>" :
+\ deoplete#mappings#manual_complete()
