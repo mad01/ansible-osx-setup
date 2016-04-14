@@ -26,25 +26,23 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 " Formating
 " Plug 'scrooloose/nerdcommenter'
 
-
 " Themes
 Plug 'vim-scripts/wombat256.vim'
-
 
 " Javascript
 Plug 'moll/vim-node', {'for': 'javascript'}
 Plug 'ahayman/vim-nodejs-complete', {'for': 'javascript'}
 Plug 'ternjs/tern_for_vim', {'for': 'javascript', 'do': 'npm install'}
 
-
 " Elixir
 Plug 'elixir-lang/vim-elixir'
 Plug 'mattreduce/vim-mix'
 Plug 'thinca/vim-ref'
 Plug 'awetzel/elixir.nvim', { 'do': 'yes \| ./install.sh' }
+Plug 'slashmili/alchemist.vim'
 
 " completion
-" Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'Shougo/deoplete.nvim'
 
 
@@ -263,3 +261,12 @@ let g:deoplete#enable_ignore_case = 1
 inoremap <silent><expr> <Tab>
 \ pumvisible() ? "\<C-n>" :
 \ deoplete#mappings#manual_complete()
+
+
+" alchemist
+let g:alchemist_tag_disable = 1
+let g:alchemist_tag_map = '<C-]>'
+let g:alchemist_tag_stack_map = '<C-T>'
+
+" ctags tags
+:set tags=~/.nvim_ctags

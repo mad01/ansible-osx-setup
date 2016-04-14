@@ -17,3 +17,6 @@
 
     - name: copy .tmux.conf
       copy: src=dotfiles/.tmux.conf dest=~/ force=yes
+
+    - name: copy .ctags
+      copy: src=dotfiles/.ctags dest=~/ force=yes
