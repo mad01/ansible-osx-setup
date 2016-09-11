@@ -65,7 +65,7 @@ export PATH=$PATH:/usr/local/mysql/bin
 export GROOVY_HOME=/usr/local/opt/groovy/libexec
 export ANSIBLE_NOCOWS=1
 
-export GOPATH=$HOME 
+export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 zstyle ':completion:*:(all-|)files' ignored-patterns "(*.pyc|*~)"
 
