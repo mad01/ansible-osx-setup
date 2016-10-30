@@ -59,6 +59,8 @@ filetype plugin indent on
 " General
 set history=100              " store 100 lines of history
 
+
+
 "NeoVim handles ESC keys as alt+key, set this to solve the problem
   set timeout
   set timeoutlen=750
@@ -70,6 +72,10 @@ set history=100              " store 100 lines of history
 
 
 " User Interface
+
+" set esc to jj
+inoremap jj <Esc>
+
 set showmode                 " display the current mode
 set ruler                    " always show current position
 set scrolloff=7              " set scroll offset to 7 lines above/below cursor
