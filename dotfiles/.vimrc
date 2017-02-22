@@ -10,7 +10,6 @@ call plug#begin('~/.vim/plugged')
 " General
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
-Plug 'fatih/vim-go'
 Plug 'tpope/vim-surround'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'jiangmiao/auto-pairs'
@@ -24,15 +23,26 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 " Formating
-" Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdcommenter'
+Plug 'Yggdroot/indentLine'
+
 
 " Themes
 Plug 'vim-scripts/wombat256.vim'
+Plug 'altercation/vim-colors-solarized'
+Plug 'vim-airline/vim-airline-themes'
+
+
+" Scala
+Plug 'derekwyatt/vim-scala'
+Plug 'ensime/ensime-vim'
+
 
 " Javascript
 Plug 'moll/vim-node', {'for': 'javascript'}
 Plug 'ahayman/vim-nodejs-complete', {'for': 'javascript'}
 Plug 'ternjs/tern_for_vim', {'for': 'javascript', 'do': 'npm install'}
+
 
 " Elixir
 Plug 'elixir-lang/vim-elixir'
@@ -44,6 +54,11 @@ Plug 'slashmili/alchemist.vim'
 " completion
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'Shougo/deoplete.nvim'
+
+" Golang
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+Plug 'AndrewRadev/splitjoin.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 
 
 call plug#end()
@@ -58,8 +73,6 @@ filetype plugin indent on
 
 " General
 set history=100              " store 100 lines of history
-
-
 
 "NeoVim handles ESC keys as alt+key, set this to solve the problem
   set timeout
@@ -122,6 +135,7 @@ set softtabstop=4
 set shiftwidth=4
 autocmd FileType Makefile set noexpandtab
 autocmd FileType jade set tabstop=2|set softtabstop=2|set shiftwidth=2
+autocmd FileType yaml set tabstop=2|set softtabstop=2|set shiftwidth=2
 set clipboard=unnamed
 
 
@@ -163,7 +177,7 @@ let g:neomake_python_enabled_makers = ['flake8']
 
 " FZF
 set rtp+=~/.fzf
-nnoremap <leader>t :call fzf#run({'sink': 'e', 'window': 'enew'})<CR>
+nnoremap <leader>l :call fzf#run({'sink': 'e', 'window': 'enew'})<CR>
 
 
 " Shortcuts
@@ -213,6 +227,7 @@ autocmd StdinReadPre * let s:std_in=1
 set completeopt-=preview
 let g:go_disable_autoinstall = 0
 let g:neocomplete#enable_at_startup = 1
+set nopaste
 
 
 " Snippets are separated from the engine. Add this if you want them:
@@ -242,6 +257,7 @@ let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
+let g:go_highlight_fields = 1
 let g:syntastic_go_checkers = ['go', 'golint', 'errcheck']
 
 
@@ -262,7 +278,7 @@ nnoremap <C-H> <C-W><C-H>
 
 
 " deoplete.nvim
-let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_at_startup = 0
 let g:deoplete#enable_ignore_case = 1
 inoremap <silent><expr> <Tab>
 \ pumvisible() ? "\<C-n>" :
@@ -275,4 +291,11 @@ let g:alchemist_tag_map = '<C-]>'
 let g:alchemist_tag_stack_map = '<C-T>'
 
 " ctags tags
-:set tags=~/.nvim_ctags
+" set tags=~/.nvim_ctags
+
+" indentLine
+let g:indentLine_enabled = 0
+
+" vim-indent-guides
+" vim ensime
+
