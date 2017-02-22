@@ -38,19 +38,18 @@ ZSH_THEME="mad"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew docker pyenv)
+plugins=()
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export PATH=$PATH:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/MacGPG2/bin
 
-source ~/.bash_alias
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export CLICOLOR=1
 export LSCOLORS=exfxcxdxbxegedabagacad
-HISTSIZE=50000
-SAVEHIST=50000
+HISTSIZE=10000
+SAVEHIST=10000
 [ $USER != $DEFAULT_USERNAME ] && local username='%n@%m '
 DISABLE_CORRECTION="true"
 unsetopt correct_all
@@ -65,11 +64,16 @@ export PATH=$PATH:/usr/local/mysql/bin
 export GROOVY_HOME=/usr/local/opt/groovy/libexec
 export ANSIBLE_NOCOWS=1
 
-export GOPATH=$HOME/gopath
-export PATH=$PATH:/usr/local/opt/go/libexec/bin
-export PATH=$PATH:$GOPATH/bin
-
 zstyle ':completion:*:(all-|)files' ignored-patterns "(*.pyc|*~)"
 
 export FZF_DEFAULT_COMMAND='ag -g ""'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
+
+source ~/.priv_alias
+
+# go things
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:/usr/local/opt/go/libexec/bin
