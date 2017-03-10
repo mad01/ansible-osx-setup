@@ -35,7 +35,6 @@ Plug 'vim-airline/vim-airline-themes'
 
 " Scala
 Plug 'derekwyatt/vim-scala'
-Plug 'ensime/ensime-vim'
 
 
 " Javascript
@@ -250,7 +249,6 @@ nmap ga <Plug>(EasyAlign)
 " use goimports for formatting
 let g:go_fmt_command = "goimports"
 
-
 " turn highlighting on
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
@@ -258,7 +256,10 @@ let g:go_highlight_structs = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 let g:go_highlight_fields = 1
-let g:syntastic_go_checkers = ['go', 'golint', 'errcheck']
+
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+let g:go_list_type = "quickfix"
 
 
 " Open go doc in vertical window, horizontal, or tab
@@ -275,7 +276,6 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-
 
 " deoplete.nvim
 let g:deoplete#enable_at_startup = 0
