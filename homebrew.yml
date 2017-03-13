@@ -58,9 +58,6 @@
     - name: brew tap versions
       shell: brew tap homebrew/versions 
 
-    - name: install groovy
-      homebrew: name=groovy state=latest
-
     - name: install mercurial
       homebrew: name=mercurial state=latest
 

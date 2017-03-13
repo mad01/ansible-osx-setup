@@ -1,6 +1,6 @@
 ---
-- hosts: localhost
-  tasks:
+
+- block:
     - name: install zsh if not existing
       command: ./dotfiles/oh-my-zsh-install.sh
 
@@ -11,5 +11,10 @@
       copy: src=dotfiles/mad.zsh-theme dest=~/.oh-my-zsh/themes force=yes
 
     - name: set zsh as default shell
-      sudo: yes
       shell: chsh -s "$(command -v zsh)" "${USER}"
+
+  hosts: localhost
+  become: yes
+  become_method: sudo
+  tags:
+    - zsh
