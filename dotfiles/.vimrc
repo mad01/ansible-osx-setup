@@ -204,7 +204,7 @@ map <S-H> gT                 " go to prev tab
 map <S-L> gt                 " go to next tab
 map <C-t><C-t> :tabnew<CR>      " new tab
 map <C-t><C-w> :tabclose<CR>    " close tab
-nmap <leader>/ :nohl<CR>        " ,/ turns off search highlighting
+" nmap <leader>/ :nohl<CR>        " ,/ turns off search highlighting
 
 " bash like keys for the command line
 cnoremap <C-A> <Home>
@@ -305,12 +305,12 @@ let g:indentLine_enabled = 0
 
 " Command for git grep
 " - fzf#vim#grep(command, with_column, [options], [fullscreen])
+nmap <leader>? :GGrep <CR>
 command! -bang -nargs=* GGrep
   \ call fzf#vim#grep('git grep --line-number '.shellescape(<q-args>), 0, <bang>0)
 
 " Override Colors command. You can safely do this in your .vimrc as fzf.vim
 " will not override existing commands.
-nmap <leader>? :Ag <CR>
 command! -bang Colors
   \ call fzf#vim#colors({'left': '15%', 'options': '--reverse --margin 30%,0'}, <bang>0)
 
@@ -321,6 +321,7 @@ command! -bang Colors
 "
 "   :Ag  - Start fzf with hidden preview window that can be enabled with "?" key
 "   :Ag! - Start fzf in fullscreen and display the preview window above
+nmap <leader>/ :Ag <CR>
 command! -bang -nargs=* Ag
   \ call fzf#vim#ag(<q-args>,
   \                 <bang>0 ? fzf#vim#with_preview('up:60%')
