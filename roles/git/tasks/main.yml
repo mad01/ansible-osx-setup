@@ -1,5 +1,6 @@
-- hosts: localhost
-  tasks:
+---
+
+- block:
     - name: copy .gitconfig in to user
       copy: src=dotfiles/.gitconfig dest=~/ force=yes
 
@@ -11,3 +12,7 @@
 
     - name: set .gitignore
       shell: git config --global core.excludesfile ~/.gitignore
+
+  hosts: localhost
+  tags:
+    - git
