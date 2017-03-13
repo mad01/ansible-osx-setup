@@ -11,7 +11,7 @@
       shell: brew tap homebrew/versions 
 
     - name: homebrew packages
-      apt:
+      homebrew:
         name: "{{ item }}"
         update_cache: yes
         cache_valid_time: 3600
