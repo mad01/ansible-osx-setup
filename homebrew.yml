@@ -7,9 +7,6 @@
     - name: tap homebrew cask
       homebrew_tap: tap=caskroom/cask state=present
 
-    - name: install homebrew cask
-      homebrew: name=brew-cask
-
     - name: install wget
       homebrew: name=wget state=latest
 
