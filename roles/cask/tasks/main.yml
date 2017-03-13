@@ -1,6 +1,6 @@
 ---
-- hosts: localhost
-  tasks:
+
+- block:
     - name: install alfred 
       homebrew_cask: name=alfred state=present
 
@@ -36,3 +36,7 @@
 
     - name: install vagrant
       homebrew_cask: name=vagrant state=present
+
+  hosts: localhost
+  tags:
+    - cask
