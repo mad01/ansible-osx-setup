@@ -16,6 +16,16 @@ else
     brew linkapps python
 fi
 
+
+pkg="python3"
+if brew list -1 | grep -q "^${pkg}\$"; then
+    echo "Package '$pkg' is installed"
+else
+    echo "Package '$pkg' is not installed, installing it"
+    brew install python3
+    brew linkapps python3
+fi
+
 if which ansible >/dev/null; then
     echo ansible exists
 else
