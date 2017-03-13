@@ -31,9 +31,6 @@
     - name: install flake8
       pip: name=flake8 state=present
 
-    - name: install nose
-      pip: name=nose state=present
-
     - name: install mock 
       pip: name=mock state=present
 
