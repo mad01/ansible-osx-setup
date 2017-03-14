@@ -42,6 +42,7 @@ plugins=()
 
 source $ZSH/oh-my-zsh.sh
 
+
 # Customize to your needs...
 export PATH="/bin:${PATH}"
 
@@ -61,30 +62,36 @@ export PATH="/opt/X11/bin:${PATH}"
 export PATH="/opt/local/bin:${PATH}"
 export PATH="/opt/local/sbin:${PATH}"
 
+export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+
 
 export CLICOLOR=1
 export LSCOLORS=exfxcxdxbxegedabagacad
-HISTSIZE=10000
-SAVEHIST=10000
-[ $USER != $DEFAULT_USERNAME ] && local username='%n@%m '
-DISABLE_CORRECTION="true"
-unsetopt correct_all
 export LC_ALL=en_US.UTF-8  
 export LANG=en_US.UTF-8
+[ $USER != $DEFAULT_USERNAME ] && local username='%n@%m '
+
+
+HISTSIZE=10000
+SAVEHIST=10000
+DISABLE_CORRECTION="true"
+
+
+unsetopt correct_all
 setopt INC_APPEND_HISTORY
 setopt NO_SHARE_HISTORY
 
-export GROOVY_HOME=/usr/local/opt/groovy/libexec
+
 export ANSIBLE_NOCOWS=1
 
-zstyle ':completion:*:(all-|)files' ignored-patterns "(*.pyc|*~)"
 
+zstyle ':completion:*:(all-|)files' ignored-patterns "(*.pyc|*~)"
 export FZF_DEFAULT_COMMAND='ag -g ""'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
 
 source ~/.bash_alias
+
 
 # go things
 export GOPATH=$HOME/go
