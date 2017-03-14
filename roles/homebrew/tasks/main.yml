@@ -39,3 +39,8 @@
     - neovim/neovim/neovim
     - tmux
     - the_silver_searcher
+    - coreutils
+    - ctags 
+    - gnu-sed
+    - jq
+    - readline
