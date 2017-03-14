@@ -71,7 +71,7 @@ export FZF_DEFAULT_COMMAND='ag -g ""'
 
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
 
-source ~/.priv_alias
+source ~/.bash_alias
 
 # go things
 export GOPATH=$HOME/go

@@ -1,3 +1,4 @@
+alias ls='ls --color'
 alias l='ls'
 alias lth='ls -lth'
 alias la='ls -a'
@@ -9,12 +10,18 @@ alias la='ls -AF'
 alias ll='ls -lFh'
 alias grep='grep --color=auto'
 alias df='df -h'
+alias vim='nvim'
+alias rm='trash'
 
 # fix "__git_ps1" issue
 source ~/.git-prompt.sh
-alias vim='nvim'
-alias random='echo $RANDOM | md5'
-source ~/.priv_alias
-alias c='cd ~/work/git'
-alias rm='trash'
+
+# alias
+alias clean_docker='docker rm -f $(docker ps -qa)'
+alias docker-host='eval "$(docker-machine env docker-dev)"'
+alias ctags_rebuild='ctags -R .'
+alias irc.shell-mosh='mosh alexander@shell.ishell.nu --ssh="ssh -p 2222"'
 alias gssh='ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null '
+
+# go work dir
+alias gocode-dir='cd $GOPATH/src/github.com/'
