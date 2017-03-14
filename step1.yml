@@ -6,5 +6,4 @@
     - { role: pip }
     - { role: dotfiles }
     - { role: git }
-    - { role: zsh }
     - { role: vim }
