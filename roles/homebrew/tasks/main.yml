@@ -40,7 +40,8 @@
     - tmux
     - the_silver_searcher
     - coreutils
-    - ctags 
+    - ctags
     - gnu-sed
     - jq
     - readline
+    - zsh-completions
