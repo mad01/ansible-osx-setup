@@ -46,11 +46,11 @@ Plug 'ternjs/tern_for_vim', {'for': 'javascript', 'do': 'npm install'}
 
 
 " Elixir
-Plug 'elixir-lang/vim-elixir'
-Plug 'mattreduce/vim-mix'
-Plug 'thinca/vim-ref'
-Plug 'awetzel/elixir.nvim', { 'do': 'yes \| ./install.sh' }
-Plug 'slashmili/alchemist.vim'
+" Plug 'elixir-lang/vim-elixir'
+" Plug 'mattreduce/vim-mix'
+" Plug 'thinca/vim-ref'
+" Plug 'awetzel/elixir.nvim', { 'do': 'yes \| ./install.sh' }
+" Plug 'slashmili/alchemist.vim'
 
 " completion
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
