@@ -6,5 +6,5 @@
     - { role: pip }
     - { role: dotfiles }
     - { role: git }
-    - { role: zsh }
+    - { role: zsh, become: yes, become_method: sudo }
     - { role: vim }
