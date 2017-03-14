@@ -1,18 +1,13 @@
 ---
 
-- block:
-    - name: install zsh if not existing
-      command: ./dotfiles/oh-my-zsh-install.sh
+- name: install zsh if not existing
+  command: ./dotfiles/oh-my-zsh-install.sh
 
-    - name: copy .zshrc
-      copy: src=dotfiles/.zshrc dest=~/ force=yes
+- name: copy .zshrc
+  copy: src=dotfiles/.zshrc dest=~/ force=yes
 
-    - name: copy mad.zsh-theme
-      copy: src=dotfiles/mad.zsh-theme dest=~/.oh-my-zsh/themes force=yes
+- name: copy mad.zsh-theme
+  copy: src=dotfiles/mad.zsh-theme dest=~/.oh-my-zsh/themes force=yes
 
-    - name: set zsh as default shell
-      shell: chsh -s "$(command -v zsh)" "${USER}"
-
-  hosts: localhost
-  tags:
-    - zsh
+- name: set zsh as default shell
+  shell: chsh -s "$(command -v zsh)" "${USER}"

@@ -1,15 +1,10 @@
 ---
 
-- block:
-    - name: copy .gitconfig in to user
-      copy: src=dotfiles/.gitconfig dest=~/ force=yes
+- name: copy .gitconfig in to user
+  copy: src=dotfiles/.gitconfig dest=~/ force=yes
 
-    - name: copy  .git-prompt.sh in to user
-      copy: src=dotfiles/.git-prompt.sh dest=~/ force=yes
+- name: copy  .git-prompt.sh in to user
+  copy: src=dotfiles/.git-prompt.sh dest=~/ force=yes
 
-    - name: set .gitignore
-      shell: git config --global core.excludesfile ~/.gitignore
-
-  hosts: localhost
-  tags:
-    - git
+- name: set .gitignore
+  shell: git config --global core.excludesfile ~/.gitignore

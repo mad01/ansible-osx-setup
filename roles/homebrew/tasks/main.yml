@@ -1,43 +1,38 @@
 ---
 
-- block:
-    - name: update homebrew
-      homebrew: update_homebrew=yes upgrade_all=yes
+- name: update homebrew
+  homebrew: update_homebrew=yes upgrade_all=yes
 
-    - name: tap homebrew cask
-      homebrew_tap: tap=caskroom/cask state=present
+- name: tap homebrew cask
+  homebrew_tap: tap=caskroom/cask state=present
 
-    - name: brew tap versions
-      shell: brew tap homebrew/versions
+- name: brew tap versions
+  shell: brew tap homebrew/versions
 
-    - name: homebrew packages
-      homebrew:
-        name: "{{ item }}"
-        state: latest
-      with_items:
-        - wget
-        - git
-        - mosh
-        - zsh
-        - tree
-        - libev
-        - xz
-        - ssh-copy-id
-        - htop
-        - cmake
-        - gdbm
-        - libyaml
-        - gnu-tar
-        - pkg-config
-        - nmap
-        - protobuf
-        - mercurial
-        - rcmdnk-trash
-        - fzf
-        - neovim/neovim/neovim
-        - tmux
-        - the_silver_searcher
-
-  hosts: localhost
-  tags:
-    - homebrew
+- name: homebrew packages
+  homebrew:
+    name: "{{ item }}"
+    state: latest
+  with_items:
+    - wget
+    - git
+    - mosh
+    - zsh
+    - tree
+    - libev
+    - xz
+    - ssh-copy-id
+    - htop
+    - cmake
+    - gdbm
+    - libyaml
+    - gnu-tar
+    - pkg-config
+    - nmap
+    - protobuf
+    - mercurial
+    - rcmdnk-trash
+    - fzf
+    - neovim/neovim/neovim
+    - tmux
+    - the_silver_searcher

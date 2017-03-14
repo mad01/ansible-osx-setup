@@ -1,34 +1,29 @@
 ---
 
-- block:
-    - name: pip packages
-      pip:
-        name: "{{ item }}"
-        state: latest
-      with_items:
-        - ipython
-        - pep8
-        - requests
-        - setuptools
-        - six
-        - virtualenv
-        - aniso8601
-        - docker-py
-        - dockerpty
-        - flake8
-        - mock
-        - passlib
-        - pytest
-        - simplejson
-        - watchdog
-        - neovim
+- name: pip packages
+  pip:
+    name: "{{ item }}"
+    state: latest
+  with_items:
+    - ipython
+    - pep8
+    - requests
+    - setuptools
+    - six
+    - virtualenv
+    - aniso8601
+    - docker-py
+    - dockerpty
+    - flake8
+    - mock
+    - passlib
+    - pytest
+    - simplejson
+    - watchdog
+    - neovim
 
-    - name: install neovim extra
-      pip:
-        name: neovim
-        state: latest
-        executable: pip3
-
-  hosts: localhost
-  tags:
-    - pip
+- name: install neovim extra
+  pip:
+    name: neovim
+    state: latest
+    executable: pip3
