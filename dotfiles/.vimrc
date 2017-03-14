@@ -76,13 +76,13 @@ filetype plugin indent on
 set history=100              " store 100 lines of history
 
 "NeoVim handles ESC keys as alt+key, set this to solve the problem
-  set timeout
-  set timeoutlen=750
-  set ttimeoutlen=250
-  if has('nvim')
-     set ttimeout
-     set ttimeoutlen=0
-  endif
+set timeout
+set timeoutlen=750
+set ttimeoutlen=250
+if has('nvim')
+    set ttimeout
+    set ttimeoutlen=0
+endif
 
 
 " User Interface
@@ -113,6 +113,10 @@ set wildignore=*.o,*.class,*.pyc
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 set whichwrap+=<,>,b,s,h,l,[,]
+
+
+" enable mouse in terminal 
+set mouse=a 
 
 
 filetype on                  " enable filetype detection
