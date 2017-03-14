@@ -10,4 +10,4 @@
   shell: curl -o - https://raw.githubusercontent.com/mad01/vimrc/master/auto-install.sh | sh
 
 - name: copy .vimrc
-  copy: src=dotfiles/.vimrc dest=~/ force=yes
+  copy: src=vimrc dest=~/.vimrc force=yes
