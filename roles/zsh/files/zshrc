@@ -43,9 +43,25 @@ plugins=()
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=$PATH:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/MacGPG2/bin
+export PATH="/bin:${PATH}"
 
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+export PATH="/sbin:${PATH}"
+
+export PATH="/usr/bin:${PATH}"
+export PATH="/usr/sbin:${PATH}"
+
+export PATH="/usr/local/bin:${PATH}"
+export PATH="/usr/local/sbin:${PATH}"
+export PATH="/usr/local/Cellar:${PATH}"
+export PATH="/usr/local/php5/bin:$PATH"
+export PATH="/usr/local/mysql/bin:${PATH}"
+export PATH="/usr/local/pgsql/bin:${PATH}"
+
+export PATH="/opt/X11/bin:${PATH}"
+export PATH="/opt/local/bin:${PATH}"
+export PATH="/opt/local/sbin:${PATH}"
+
+
 export CLICOLOR=1
 export LSCOLORS=exfxcxdxbxegedabagacad
 HISTSIZE=10000
@@ -53,13 +69,10 @@ SAVEHIST=10000
 [ $USER != $DEFAULT_USERNAME ] && local username='%n@%m '
 DISABLE_CORRECTION="true"
 unsetopt correct_all
-export PATH="/usr/local/bin:/usr/local/pgsql/bin:/usr/local/php5/bin:/usr/local/sbin:/usr/local/mysql/bin:$PATH"
 export LC_ALL=en_US.UTF-8  
 export LANG=en_US.UTF-8
-export PATH="/usr/local/Cellar:${PATH}"
 setopt INC_APPEND_HISTORY
 setopt NO_SHARE_HISTORY
-export PATH=$PATH:/usr/local/mysql/bin
 
 export GROOVY_HOME=/usr/local/opt/groovy/libexec
 export ANSIBLE_NOCOWS=1
