@@ -36,13 +36,13 @@ Plug 'vim-airline/vim-airline-themes'
 
 
 " Scala
-Plug 'derekwyatt/vim-scala'
+" Plug 'derekwyatt/vim-scala'
 
 
 " Javascript
-Plug 'moll/vim-node', {'for': 'javascript'}
-Plug 'ahayman/vim-nodejs-complete', {'for': 'javascript'}
-Plug 'ternjs/tern_for_vim', {'for': 'javascript', 'do': 'npm install'}
+" Plug 'moll/vim-node', {'for': 'javascript'}
+" Plug 'ahayman/vim-nodejs-complete', {'for': 'javascript'}
+" Plug 'ternjs/tern_for_vim', {'for': 'javascript', 'do': 'npm install'}
 
 
 " Elixir
