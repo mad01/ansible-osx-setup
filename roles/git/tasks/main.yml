@@ -1,10 +1,13 @@
 ---
 
 - name: copy .gitconfig in to user
-  copy: src=dotfiles/.gitconfig dest=~/ force=yes
+  copy: src=gitconfig dest=~/.gitconfig force=yes
+
+- name: copy .gitignore in to user
+  copy: src=gitignore dest=~/.gitignore force=yes
 
 - name: copy  .git-prompt.sh in to user
-  copy: src=dotfiles/.git-prompt.sh dest=~/ force=yes
+  copy: src=git-prompt.sh dest=~/.git-prompt.sh force=yes
 
 - name: set .gitignore
   shell: git config --global core.excludesfile ~/.gitignore
