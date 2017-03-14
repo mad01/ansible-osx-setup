@@ -3,7 +3,7 @@
 if which brew >/dev/null; then
     echo brew exists
 else
-    echo brew does not exist installing it 
+    echo brew does not exist installing it
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
@@ -29,13 +29,18 @@ fi
 if which ansible >/dev/null; then
     echo ansible exists
 else
-    echo ansible does not exist installing it 
+    echo ansible does not exist installing it
     pip install ansible
 fi
 
 if which ansible-playbook >/dev/null; then
-    echo "running ansible playbook"
-    ansible-playbook -i hosts site.yml --ask-sudo-pass
+    echo "running ansible playbook step1.yml"
+    ansible-playbook -i hosts step1.yml
+
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+    echo "running ansible playbook step2.yml"
+    ansible-playbook -i hosts step2.yml --ask-sudo-pass
 else
     echo ansible-playbook not installed
 fi
