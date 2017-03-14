@@ -1,9 +1,10 @@
 ---
-- include: homebrew.yml
-- include: cask.yml
-- include: pip.yml
-- include: files.yml
-- include: git.yml
-- include: zsh.yml
-- include: gem.yml
-- include: vim.yml
+- hosts: localhost
+  roles:
+    - { role: homebrew }
+    - { role: cask }
+    - { role: pip }
+    - { role: files }
+    - { role: git }
+    - { role: zsh }
+    - { role: vim }
