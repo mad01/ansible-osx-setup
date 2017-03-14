@@ -4,9 +4,6 @@
     - name: copy .gitconfig in to user
       copy: src=dotfiles/.gitconfig dest=~/ force=yes
 
-    - name: copy .gitignore in to user
-      copy: src=dotfiles/.gitignore dest=~/ force=yes
-
     - name: copy  .git-prompt.sh in to user
       copy: src=dotfiles/.git-prompt.sh dest=~/ force=yes
 
