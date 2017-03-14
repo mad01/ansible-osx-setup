@@ -1,10 +1,5 @@
 ---
 
-- name: install zsh if not existing
-  become: yes
-  become_method: sudo
-  shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
 - name: copy .zshrc
   copy: src=zshrc dest=~/.zshrc force=yes
 
