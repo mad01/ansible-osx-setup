@@ -1,13 +1,20 @@
 ---
 
+- name: check if .oh-my-zsh exists
+  stat:
+    path: "{{ lookup('env','HOME') }}"/.oh-my-zsh/
+  register: oh_my_zsh_is_installed
+
 - name: install zsh if not existing
-  command: ./dotfiles/oh-my-zsh-install.sh
+  when: not oh_my_zsh_is_installed.stat.exists
+  shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 - name: copy .zshrc
-  copy: src=dotfiles/.zshrc dest=~/ force=yes
+  copy: src=zshrc dest=~/.zshrc force=yes
 
 - name: copy mad.zsh-theme
-  copy: src=dotfiles/mad.zsh-theme dest=~/.oh-my-zsh/themes force=yes
+  when: oh_my_zsh_is_installed.stat.exists
+  copy: src=mad.zsh-theme dest=~/.oh-my-zsh/themes force=yes
 
 - name: set zsh as default shell
   shell: chsh -s "$(command -v zsh)" "${USER}"
