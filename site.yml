@@ -4,7 +4,7 @@
     - { role: homebrew }
     - { role: cask }
     - { role: pip }
-    - { role: files }
+    - { role: dotfiles }
     - { role: git }
     - { role: zsh }
     - { role: vim }
