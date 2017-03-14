@@ -1,8 +1,6 @@
 ---
-- hosts: localhost
-  vars:
-    local_home: "{{ lookup('env','HOME') }}"
-  tasks:
+
+- block:
     - name: create $HOME/.vim_swap if exists
       file: path={{ local_home }}/.vim_swap state=directory mode=0755
 
@@ -14,3 +12,7 @@
 
     - name: copy .vimrc
       copy: src=dotfiles/.vimrc dest=~/ force=yes
+
+  hosts: localhost
+  tags:
+    - vim
