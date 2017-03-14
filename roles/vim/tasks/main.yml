@@ -1,9 +1,15 @@
 ---
 
+- name: check if .vim dir exists
+  stat:
+    path: "{{ lookup('env','HOME') }}/.vim/"
+  register: dotvim_dir
+
 - name: create $HOME/.vim_swap if exists
   file: path={{ local_home }}/.vim_swap state=directory mode=0755
 
 - name: install vim setup from git
+  when: not dotvim_dir.stat.exists
   shell: curl -o - https://raw.githubusercontent.com/mad01/vimrc/master/auto-install.sh | sh
 
 - name: copy .vimrc
