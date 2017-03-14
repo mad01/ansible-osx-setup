@@ -2,7 +2,7 @@
 
 - name: check if .oh-my-zsh exists
   stat:
-    path: "{{ lookup('env','HOME') }}"/.oh-my-zsh/
+    path: "{{ lookup('env','HOME') }}/.oh-my-zsh/"
   register: oh_my_zsh_is_installed
 
 - name: install zsh if not existing
