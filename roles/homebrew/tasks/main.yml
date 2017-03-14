@@ -1,14 +1,14 @@
 ---
 
 - block:
-    - name: update homebrew 
+    - name: update homebrew
       homebrew: update_homebrew=yes upgrade_all=yes
 
     - name: tap homebrew cask
       homebrew_tap: tap=caskroom/cask state=present
 
     - name: brew tap versions
-      shell: brew tap homebrew/versions 
+      shell: brew tap homebrew/versions
 
     - name: homebrew packages
       homebrew:
@@ -25,7 +25,7 @@
         - libev
         - xz
         - ssh-copy-id
-        - htop 
+        - htop
         - cmake
         - gdbm
         - libyaml

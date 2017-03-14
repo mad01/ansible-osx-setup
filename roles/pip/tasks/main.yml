@@ -16,7 +16,7 @@
         - virtualenv
         - aniso8601
         - docker-py
-        - dockerpty 
+        - dockerpty
         - flake8
         - mock
         - passlib
@@ -24,7 +24,7 @@
         - simplejson
         - watchdog
         - neovim
- 
+
     - name: install neovim extra
       pip:
         name: neovim

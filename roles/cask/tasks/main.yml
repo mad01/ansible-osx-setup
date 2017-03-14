@@ -1,7 +1,7 @@
 ---
 
 - block:
-    - name: install alfred 
+    - name: install alfred
       homebrew_cask: name=alfred state=present
 
     - name: install google-chrome
@@ -13,7 +13,7 @@
     - name: install spotify
       homebrew_cask: name=spotify state=present
 
-    - name: install skype 
+    - name: install skype
       homebrew_cask: name=skype state=present
 
     - name: install google-drive
@@ -31,7 +31,7 @@
     - name: install evernote
       homebrew_cask: name=evernote state=present
 
-    - name: install dropbox 
+    - name: install dropbox
       homebrew_cask: name=dropbox state=present
 
     - name: install vagrant
