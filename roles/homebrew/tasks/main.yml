@@ -7,7 +7,10 @@
   homebrew_tap: tap=caskroom/cask state=present
 
 - name: brew tap versions
-  shell: brew tap homebrew/versions
+  homebrew_tap: tap=homebrew/versions state=present
+
+- name: brew tap homebrew/versions
+  homebrew_tap: tap=rcmdnk/rcmdnkpac state=present
 
 - name: homebrew packages
   homebrew:
