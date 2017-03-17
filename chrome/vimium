@@ -1,0 +1,9 @@
+# custom key mappings
+# Insert your preferred key mappings here.
+unmap x
+unmap h
+unmap i
+unmap b
+unmap o
+map { scrollPageUp
+map } scrollPageDown
