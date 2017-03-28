@@ -45,3 +45,4 @@
     - jq
     - readline
     - zsh-completions
+    - go
