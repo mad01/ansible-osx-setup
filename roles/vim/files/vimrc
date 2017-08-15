@@ -9,52 +9,28 @@ call plug#begin('~/.vim/plugged')
 " Plugs to install
 " General
 Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-surround'
-Plug 'editorconfig/editorconfig-vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
 Plug 'bling/vim-airline'
-Plug 'benekastah/neomake'
 Plug 'terryma/vim-multiple-cursors'
-
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 
-" Formating
-Plug 'scrooloose/nerdcommenter'
-Plug 'Yggdroot/indentLine'
+" Syntax checker
+Plug 'w0rp/ale'
 
+" Formating
+Plug 'hashivim/vim-terraform'
 
 " Themes
 Plug 'vim-scripts/wombat256.vim'
-Plug 'altercation/vim-colors-solarized'
 Plug 'vim-airline/vim-airline-themes'
 
-
-" Scala
-" Plug 'derekwyatt/vim-scala'
-
-
-" Javascript
-" Plug 'moll/vim-node', {'for': 'javascript'}
-" Plug 'ahayman/vim-nodejs-complete', {'for': 'javascript'}
-" Plug 'ternjs/tern_for_vim', {'for': 'javascript', 'do': 'npm install'}
-
-
-" Elixir
-" Plug 'elixir-lang/vim-elixir'
-" Plug 'mattreduce/vim-mix'
-" Plug 'thinca/vim-ref'
-" Plug 'awetzel/elixir.nvim', { 'do': 'yes \| ./install.sh' }
-" Plug 'slashmili/alchemist.vim'
-
 " completion
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
-Plug 'Shougo/deoplete.nvim'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --gocode-completer' }
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " Golang
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
@@ -171,17 +147,8 @@ augroup resCur
 augroup END
 
 
-" vim-airline
-" let g:airline_powerline_fonts = 1
-
-
-" Neomake
-autocmd! BufWritePost * Neomake
-let g:neomake_python_enabled_makers = ['flake8']
-
-
 " FZF
-set rtp+=~/.fzf
+set rtp+=/usr/local/opt/fzf
 nnoremap <leader>l :call fzf#run({'sink': 'e', 'window': 'enew'})<CR>
 
 
@@ -238,15 +205,26 @@ set nopaste
 " Snippets are separated from the engine. Add this if you want them:
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<c-j>"
-
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+
+
+" Ale
+"
+" Set this. Airline will handle the rest.
+let g:airline#extensions#ale#enabled = 1
+let g:ale_lint_on_save = 1
+let g:ale_lint_on_text_changed = 0
+let g:ale_lint_on_enter = 0
+let g:ale_linters = {
+\   'go': ['go build', 'gofmt', 'golint', 'gometalinter', 'gosimple', 'go vet', 'staticcheck'],
+\}
+
 
 
 " vim-easy-align
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
-
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
@@ -254,6 +232,7 @@ nmap ga <Plug>(EasyAlign)
 
 " use goimports for formatting
 let g:go_fmt_command = "goimports"
+
 
 " turn highlighting on
 let g:go_highlight_functions = 1
@@ -263,25 +242,6 @@ let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 let g:go_highlight_fields = 1
 
-let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
-let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
-let g:go_list_type = "quickfix"
-
-
-" Open go doc in vertical window, horizontal, or tab
-au Filetype go nnoremap <leader>v :vsp <CR>:exe "GoDef" <CR>
-au Filetype go nnoremap <leader>s :sp <CR>:exe "GoDef"<CR>
-au Filetype go nnoremap <leader>t :tab split <CR>:exe "GoDef"<CR>
-
-" ymc
-let g:ycm_path_to_python_interpreter = '/usr/local/bin/python'
-
-
-" split navigation
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
 
 " deoplete.nvim
 let g:deoplete#enable_at_startup = 0
@@ -291,20 +251,8 @@ inoremap <silent><expr> <Tab>
 \ deoplete#mappings#manual_complete()
 
 
-" alchemist
-let g:alchemist_tag_disable = 1
-let g:alchemist_tag_map = '<C-]>'
-let g:alchemist_tag_stack_map = '<C-T>'
-
-" ctags tags
-" set tags=~/.nvim_ctags
-
 " indentLine
 let g:indentLine_enabled = 0
-
-" vim-indent-guides
-" vim ensime
-
 
 
 " Command for git grep
@@ -332,3 +280,7 @@ command! -bang -nargs=* Ag
   \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
   \                 <bang>0)
 
+
+
+" terraform
+let g:terraform_align=1
