@@ -37,6 +37,9 @@ Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 
+" Elm
+Plug 'ElmCast/elm-vim'
+
 
 call plug#end()
 
@@ -218,6 +221,7 @@ let g:ale_lint_on_text_changed = 0
 let g:ale_lint_on_enter = 0
 let g:ale_linters = {
 \   'go': ['go build', 'gofmt', 'golint', 'gometalinter', 'gosimple', 'go vet', 'staticcheck'],
+\   'elm': ['elm-make'],
 \}
 
 
