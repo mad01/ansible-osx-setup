@@ -3,13 +3,19 @@
 	email = alexanderbrandstedt@gmail.com
 [core]
 	editor = nvim
+	excludesfile = /Users/abrandstedt/.gitignore
 [push]
     default = simple
 [alias]
+    plog = !GIT_PAGER='less -n +/^commit\\ \\[0-9a-f\\]+' git log --color --patch-with-stat
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
     ls = ls-tree -r master --name-only
     ci = commit
     s = status
     d = diff
     a = add
-
+    br = branch
+    ch = checkout
+[branch]
+	autoSetupRebase = always
+	autoSetupRebase = always
