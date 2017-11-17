@@ -120,6 +120,8 @@ set shiftwidth=4
 autocmd FileType Makefile set noexpandtab
 autocmd FileType jade set tabstop=2|set softtabstop=2|set shiftwidth=2
 autocmd FileType yaml set tabstop=2|set softtabstop=2|set shiftwidth=2
+autocmd FileType tf set tabstop=2|set softtabstop=2|set shiftwidth=2
+autocmd FileType go set tabstop=4|set softtabstop=4|set shiftwidth=4
 set clipboard=unnamed
 
 
