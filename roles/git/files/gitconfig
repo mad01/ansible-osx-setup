@@ -19,3 +19,5 @@
 [branch]
 	autoSetupRebase = always
 	autoSetupRebase = always
+[interactive]
+    diffFilter = "`brew --prefix git`/share/git-core/contrib/diff-highlight/diff-highlight"
